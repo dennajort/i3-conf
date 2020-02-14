@@ -55,8 +55,8 @@ bindsym XF86AudioNext exec "playerctl next"
 bindsym XF86AudioPrev exec "playerctl previous"
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send \\"brightness `xbacklight -get`\\""
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send \\"brightness `xbacklight -get`\\""
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -261,7 +261,7 @@ bindsym $mod+r mode "resize"
 bar {
         i3bar_command i3bar
         status_command i3status -c ~/.i3/i3status.conf
-        position bottom
+        position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
         tray_output primary
